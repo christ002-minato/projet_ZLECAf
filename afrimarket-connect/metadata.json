@@ -1,0 +1,6 @@
+{
+  "name": "AfriMarket Connect",
+  "description": "Marketplace B2B favorisant le commerce intra-africain dans le cadre de la ZLECAf.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

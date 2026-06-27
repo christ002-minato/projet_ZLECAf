@@ -53,28 +53,32 @@ export function HomePage() {
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">
-            {/* Search bar */}
-          <div className="mt-8 w-full max-w-xl">
-            <div className="flex bg-white rounded-xl overflow-hidden shadow-2xl">
-              <div className="flex-1 flex items-center gap-2 px-2">
-                <Search className="w-5 h-4 text-muted-foreground shrink-0" />
-                <input
-                  type="search"
-                  placeholder={t("search", language)}
-                  className="flex-1 py-4 text-sm text-foreground placeholder:text-muted-foreground bg-transparent border-none outline-none"
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") navigate("/products");
-                  }}
-                />
-              </div>
-              <button
-                onClick={() => navigate("/products")}
-                className="bg-primary text-white px-6 font-bold text-sm hover:bg-[#163d2e] transition-colors m-1.5 rounded-lg"
-              >
-                {t("search", language).split("...")[0]}
-              </button>
-            </div>
-          </div>
+          {/* Search bar */}
+<div className="mt-6 sm:mt-8 w-full max-w-[90%] sm:max-w-md md:max-w-xl px-2 sm:px-0">
+  <div className="flex bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
+    <div className="flex-1 flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 min-w-0">
+      <Search className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground shrink-0" />
+      <input
+        type="search"
+        placeholder={t("search", language)}
+        className="flex-1 min-w-0 py-3 sm:py-4 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground bg-transparent border-none outline-none"
+        onKeyDown={(e) => {
+          if (e.key === "Enter") navigate("/products");
+        }}
+      />
+    </div>
+    <button
+      onClick={() => navigate("/products")}
+      aria-label={t("search", language)}
+      className="bg-primary text-white px-3 sm:px-5 md:px-6 font-bold text-xs sm:text-sm hover:bg-[#163d2e] transition-colors m-1 sm:m-1.5 rounded-lg flex items-center justify-center shrink-0"
+    >
+      <Search className="w-4 h-4 sm:hidden" />
+      <span className="hidden sm:inline">
+        {t("search", language).split("...")[0]}
+      </span>
+    </button>
+  </div>
+</div>
 
           <h1
             className="text-white font-black leading-tight text-4xl md:text-6xl max-w-3xl"

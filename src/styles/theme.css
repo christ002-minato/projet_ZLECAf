@@ -1,0 +1,157 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  /* Palette officielle AfriMarket Connect */
+  --color-vert-afrique: #1E4D3B;
+  --color-or-africain: #D2A63B;
+  --color-terre-africaine: #6F4223;
+  --color-sable: #F5F1E6;
+  --color-noir-profond: #1A1A1A;
+
+  --background: #F5F1E6;
+  --foreground: #1A1A1A;
+  --card: #ffffff;
+  --card-foreground: #1A1A1A;
+  --popover: #ffffff;
+  --popover-foreground: #1A1A1A;
+  --primary: #1E4D3B;
+  --primary-foreground: #ffffff;
+  --secondary: #D2A63B;
+  --secondary-foreground: #1A1A1A;
+  --muted: #ECE5D3;
+  --muted-foreground: #6F4223;
+  --accent: #6F4223;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: rgba(26, 26, 26, 0.1);
+  --input: transparent;
+  --input-background: #ECE5D3;
+  --switch-background: #cbcec4;
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+  --ring: #1E4D3B;
+  --chart-1: #1E4D3B;
+  --chart-2: #D2A63B;
+  --chart-3: #6F4223;
+  --chart-4: #7c3aed;
+  --chart-5: #0891b2;
+  --radius: 0.75rem;
+  --sidebar: #ECE5D3;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-primary: #1E4D3B;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #D2A63B;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: rgba(26, 26, 26, 0.1);
+  --sidebar-ring: #1E4D3B;
+}
+
+.dark {
+  --background: #14241c;
+  --foreground: #F5F1E6;
+  --card: #1c3328;
+  --card-foreground: #F5F1E6;
+  --popover: #1c3328;
+  --popover-foreground: #F5F1E6;
+  --primary: #2f7a5a;
+  --primary-foreground: #ffffff;
+  --secondary: #3a2a10;
+  --secondary-foreground: #D2A63B;
+  --muted: #1c3328;
+  --muted-foreground: #c9b896;
+  --accent: #D2A63B;
+  --accent-foreground: #1A1A1A;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(245, 241, 230, 0.1);
+  --input: rgba(245, 241, 230, 0.1);
+  --ring: #2f7a5a;
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+  --chart-1: #2f7a5a;
+  --chart-2: #D2A63B;
+  --chart-3: #ef4444;
+  --chart-4: #a78bfa;
+  --chart-5: #22d3ee;
+  --sidebar: #1c3328;
+  --sidebar-foreground: #F5F1E6;
+  --sidebar-primary: #2f7a5a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #3a2a10;
+  --sidebar-accent-foreground: #F5F1E6;
+  --sidebar-border: rgba(245, 241, 230, 0.1);
+  --sidebar-ring: #2f7a5a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+  }
+
+  h1 { font-size: var(--text-2xl); line-height: 1.2; }
+  h2 { font-size: var(--text-xl); line-height: 1.3; }
+  h3 { font-size: var(--text-lg); line-height: 1.4; }
+  h4 { font-size: var(--text-base); line-height: 1.5; }
+
+  label { font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; }
+  button { font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; font-family: 'Outfit', sans-serif; }
+  input, select { font-size: var(--text-base); font-weight: var(--font-weight-normal); line-height: 1.5; }
+}
